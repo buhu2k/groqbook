@@ -28,7 +28,7 @@ class GenerationStatistics:
         input_tokens=0,
         output_tokens=0,
         total_time=0,
-        model_name="llama3-8b-8192",
+        model_name="llama3-70b-8192",
     ):
         self.input_time = input_time
         self.output_time = output_time
@@ -337,7 +337,7 @@ def generate_section(prompt: str, additional_instructions: str):
                 input_tokens=usage.prompt_tokens,
                 output_tokens=usage.completion_tokens,
                 total_time=usage.total_time,
-                model_name="llama3-8b-8192",
+                model_name="llama3-70b-8192",
             )
             yield statistics_to_return
 
@@ -464,7 +464,7 @@ try:
             large_model_generation_statistics, book_structure = generate_book_structure(topic_text)
 
             total_generation_statistics = GenerationStatistics(
-                model_name="llama3-8b-8192"
+                model_name="llama3-70b-8192"
             )
 
             try:
